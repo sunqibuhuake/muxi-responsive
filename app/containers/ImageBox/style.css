@@ -1,0 +1,11 @@
+.img-box {
+  background-image: url();
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: block;
+}
