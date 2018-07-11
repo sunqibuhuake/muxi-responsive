@@ -135,6 +135,11 @@ export class ArticlePage extends React.PureComponent {
       this.selectArticleById( cur_id)
     }
 
+    // if (np.location.pathname == '/news' &&　this.props.location.pathname == '/news') {
+    //   this.selectArticleById( false)
+    //   return false;
+    // }
+
     if (!this.props.location.pathname.match('news') && np.location.pathname == '/news') {
       this.selectFirstNews()
     }

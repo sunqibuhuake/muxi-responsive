@@ -7,7 +7,6 @@ import ArticleTitleItem from './ArticleTitleItem'
 import helper from '../../utils/helper'
 export default class ArticleTitle extends React.PureComponent{
   handleTitleClick() {
-
     let base = this.props.history.location.pathname.split('/')[1]
     if (!base) {
       base = 'projects'

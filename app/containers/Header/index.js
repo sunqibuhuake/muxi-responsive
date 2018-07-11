@@ -38,9 +38,12 @@ class Header extends React.Component {
 
   componentDidMount() {
 
+    this.status = 'BIG'
     //this.detectScroll()
     this.resizeLogo()
     this.bindBack()
+
+
   }
 
   bindBack() {
@@ -69,10 +72,16 @@ class Header extends React.Component {
 
 
   resizeLogo() {
+    const self = this;
     $(document).on('scroll', function() {
       if ($(document).scrollTop() > 100) {
-        $('.search-container').addClass('boldBorder')
 
+        if (self.status == 'SMALL') {
+          return false;
+        }
+
+        self.status = 'SMALL'
+        $('.search-container').addClass('boldBorder')
         $('.header-container').addClass('back2top')
 
      
@@ -138,6 +147,10 @@ class Header extends React.Component {
         $('.header-container').css('height', '40px');
       } else {
         
+        if (self.status == 'BIG') {
+          return false;
+        }
+        self.status = 'BIG'
         $('.header-container').removeClass('back2top')
 
         $('.search-container').removeClass('boldBorder')
@@ -165,11 +178,11 @@ class Header extends React.Component {
 
   componentWillReceiveProps(np) {
 
-    if (np.location.pathname !== this.props.location.pathname) {
-      helper.changeLogoColor()
+    if (np.location.pathname == '/about' || np.location.pathname == '/news' || np.location.pathname == '/') {
+      if (np.location.pathname !== this.props.location.pathname) {
+        helper.changeLogoColor()
+      }
     }
-
-
   }
 
   componentDidUpdate() {
