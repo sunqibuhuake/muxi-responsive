@@ -3,7 +3,7 @@ import api from '../../utils/api'
 export default function ({img}) {
   const styles = {
     root: {
-      width: window.innerWidth / 8,
+      width: 160,
       position: 'fixed',
       right: '15px',
       bottom: '15px',

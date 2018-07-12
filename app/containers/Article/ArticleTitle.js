@@ -21,7 +21,7 @@ export default class ArticleTitle extends React.PureComponent{
         pathname: '/' + base + '/' + this.props._id
       })
     }
-
+    this.props.onArticleSelect(this.props._id)
   }
   render() {
     const props = this.props;

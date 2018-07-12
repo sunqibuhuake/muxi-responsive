@@ -17,7 +17,8 @@ import {
   changeSearchKey,
   switchLanguage,
 initWebState,
-  selectOrder
+  selectOrder,
+  selectArticle
 } from '../App/actions'
 import MobileHeader from './MobileHeader'
 import SmallHeader from './SmallHeader'
@@ -42,6 +43,7 @@ class Header extends React.Component {
     //this.detectScroll()
     this.resizeLogo()
     this.bindBack()
+    helper.changeLogoColor()
 
 
   }
@@ -59,7 +61,7 @@ class Header extends React.Component {
   detectScroll() {
     const self = this;
     let trigger = false;
-    $(window).scroll(function() {
+    $(window).scroll(function(e) {
       const delta = $(document).scrollTop();
       //console.log(delta)
       if (delta > 20 && self.props.header == 'big' && !trigger) {
@@ -73,7 +75,7 @@ class Header extends React.Component {
 
   resizeLogo() {
     const self = this;
-    $(document).on('scroll', function() {
+    $(document).on('scroll', function(e) {
       if ($(document).scrollTop() > 100) {
 
         if (self.status == 'SMALL') {
@@ -81,7 +83,7 @@ class Header extends React.Component {
         }
 
         self.status = 'SMALL'
-        $('.search-container').addClass('boldBorder')
+        //$('.search-container').addClass('boldBorder')
         $('.header-container').addClass('back2top')
 
      
@@ -151,7 +153,7 @@ class Header extends React.Component {
           return false;
         }
         self.status = 'BIG'
-        $('.header-container').removeClass('back2top')
+        //$('.header-container').removeClass('back2top')
 
         $('.search-container').removeClass('boldBorder')
 
@@ -215,6 +217,7 @@ class Header extends React.Component {
       headerElem = (
         <XHeader
           history={this.props.history}
+          selectArticle={this.props.selectArticle}
           initWebState={this.props.initWebState}
           location={this.props.location}
           switchLanguage={this.props.switchLanguage}
@@ -258,6 +261,7 @@ export function mapDispatchToProps(dispatch) {
     hideBigHeader: () => dispatch(hideBigHeader()),
     hideSmallHeader: () => dispatch(hideSmallHeader()),
     doSearch: () => dispatch(doSearch()),
+    selectArticle: (id) => dispatch(selectArticle(id)),
     changeSearchKey: (key) => dispatch(changeSearchKey(key)),
     switchLanguage: (lang) => dispatch(switchLanguage(lang)),
     initWebState: () => dispatch(initWebState()),

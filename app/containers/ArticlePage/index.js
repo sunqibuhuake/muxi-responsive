@@ -95,8 +95,7 @@ export class ArticlePage extends React.PureComponent {
 
     if (this.props.location.pathname == '/news') {
       this.selectFirstNews()
-    }
-    if (this.props.match.params.id) {
+    } else if (this.props.match.params.id) {
       this.selectArticleById(this.props.match.params.id)
     }
   }
@@ -115,6 +114,21 @@ export class ArticlePage extends React.PureComponent {
 
   componentWillReceiveProps(np) {
 
+    //　取消选中
+    if (this.props.selected_id && !np.selected_id) {
+      $('.article-content-container').css({'height': '0px'})
+      return false;
+
+    }
+
+
+    // 从其他页面跳转至 /news
+    if (!this.props.location.pathname.match('news') && np.location.pathname == '/news') {
+      this.selectFirstNews()
+      return false;
+    }
+
+    // 更改排序方式
     if (JSON.stringify(this.props.activeOrder) !== JSON.stringify(np.activeOrder)) {
       this.props.history.push({
         pathname: '/' + this.getModeByLocation()
@@ -122,27 +136,25 @@ export class ArticlePage extends React.PureComponent {
       return false
     }
 
-    if (!np.selected_id) {
-      $('.article-content-container').css({'height': '0px'})
-    }
 
-    if (this.props.match.params.id !== np.match.params.id) {
-      let cur_id = np.match.params.id;
-      if (!cur_id) {
-        cur_id = false;
-      }
+    // if (this.props.match.params.id !== np.match.params.id) {
+    //   let cur_id = np.match.params.id;
+    //   if (!cur_id) {
+    //     cur_id = false;
+    //   }
 
-      this.selectArticleById( cur_id)
-    }
+    //   this.selectArticleById( cur_id)
+    // }
 
     // if (np.location.pathname == '/news' &&　this.props.location.pathname == '/news') {
     //   this.selectArticleById( false)
     //   return false;
     // }
 
-    if (!this.props.location.pathname.match('news') && np.location.pathname == '/news') {
-      this.selectFirstNews()
-    }
+ 
+
+
+
   }
 
   selectArticleById(id) {

@@ -51,6 +51,16 @@ export default function(props) {
   return (
     <Row className="header-container">
       <Logo></Logo>
+      <div style={{
+        position: 'absolute',
+        zIndex: 999,
+        width: '100%',
+        height: '100%',
+        left: 0,
+        top: 0,
+        padding: '20px 0'
+      }}>
+      <Row>
       <Col xs={zh_res_span} sm={zh_res_span} md={12} className="zh-font">
         <HeaderItem
           {...props}
@@ -63,6 +73,9 @@ export default function(props) {
           list={nav_en}
         ></HeaderItem>
       </Col>
+      </Row>
+      </div>
+  
     </Row>
 
   )

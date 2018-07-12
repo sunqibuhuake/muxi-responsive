@@ -14,6 +14,10 @@ export default class NavBtn extends React.PureComponent {
     this.props.history.push({
       pathname: this.props.path
     })
+    if (this.props.path == '/news') {
+
+      //this.props.selectArticle()
+    }
 
   }
 

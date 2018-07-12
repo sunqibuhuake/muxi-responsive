@@ -129,12 +129,10 @@ function appReducer(state = initialState, action) {
 
     case SELECT_ARTICLE:
       const cur_id = state.get('selected')
-      let next_id = 0;
+      let next_id = action.id;
       if (action.id == cur_id) {
         next_id = false
-      } else {
-        next_id = action.id;
-      }
+      } 
       return state.set('selected', next_id).set('feature', '');
 
     case SELECT_TARGET:

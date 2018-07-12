@@ -113,11 +113,11 @@ componentDidMount() {
         {items.length> 0 ? items : (
           <Row>
             <Col span={12}>
-            <h3 style={{paddingTop: 120,paddingLeft: 24,textAlign: 'left'}}>暂无内容</h3>
+            <h3 style={{paddingTop: 12,paddingLeft: 24,textAlign: 'left'}}>暂无内容</h3>
             </Col>
 
              <Col span={12}>
-            <h3 style={{paddingTop: 120,paddingLeft: 24,textAlign: 'left'}}>no content yet</h3>
+            <h3 style={{paddingTop: 12,paddingLeft: 24,textAlign: 'left'}}>no content yet</h3>
             </Col>
           </Row>
           

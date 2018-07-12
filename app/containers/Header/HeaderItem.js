@@ -40,6 +40,7 @@ export default function (props) {
           active={active}
           history={props.history}
           initWebState={props.initWebState}
+          selectArticle={props.selectArticle}
         >
         </NavBtn>
       </Col>
