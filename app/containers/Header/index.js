@@ -173,7 +173,7 @@ class Header extends React.Component {
         $('.englishLogo7').attr('class', 'englishLogo englishLogo7');
         $('.englishLogo8').attr('class', 'englishLogo englishLogo8');
         $('.header-item').css('display', 'block');
-        $('.header-container').css('height', '140px');
+        $('.header-container').css('height', '160px');
       }
     });
   }
