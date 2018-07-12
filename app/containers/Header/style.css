@@ -26,7 +26,7 @@
   line-height: 28.8pt;
   font-size: 24pt;
   color: black;
-  cursor: pointer;
+
 }
 
 .nav-btn.active span {
@@ -39,7 +39,7 @@
 }
 
 .search-container {
-  height: 40px;
+  height: 54px;
   border-bottom: 1px solid black;
   border-top: 1px solid black;
   position: relative;
@@ -50,10 +50,10 @@
   font-family: "suisse","pingfang","HeiTi";
   height: 100%;
   width: 100%;
-  font-size: 12pt;
-  line-height: 40px;
+  font-size: 24pt;
+  /* line-height: 54px; */
   padding-left: 24px;
-  padding-right: 42px;
+  padding-right: 54px;
   background:none;
   outline:none;
   border:0px;
@@ -70,10 +70,10 @@
 .search-btn {
   position: absolute;
   background: black;
-  font-size: 30px;
-  line-height: 40px;
+  font-size: 36px;
+  line-height: 54px;
   height: 100%;
-  width: 42px;
+  width: 54px;
   right: 0;
   top: 0;
   color: #ccc;
@@ -107,8 +107,8 @@
   font-family: pingfang;
   font-size: 4em;
   margin: 0.025em;
-  margin-top: 12px;
-  height: 60px;
+  margin-top: 14px;
+  height: 56px;
   -webkit-transition: all 0.25s;
   -moz-transition: all 0.25s;
   -ms-transition: all 0.25s;
@@ -119,8 +119,8 @@
   font-family: suisse;
   font-size: 3.78em;
   margin: 0.025em;
-  margin-top: 12px;
-  height: 60px;
+  margin-top: 14px;
+  height: 56px;
   -webkit-transition: all 0.25s;
   -moz-transition: all 0.25s;
   -ms-transition: all 0.25s;
@@ -131,7 +131,7 @@
 .shrinkChinese {
   font-size: 14px;
   line-height: 16px;
-  margin-top: 4px;
+  margin-top: 12px;
   margin-right: 0.2em;
   height: 14px;
   animation: 0;

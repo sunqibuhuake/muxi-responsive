@@ -146,7 +146,7 @@ class Header extends React.Component {
           'englishLogo englishLogo8 shrinkEnglish'
         );
         $('.header-item').css('display', 'none');
-        $('.header-container').css('height', '40px');
+        $('.header-container').css('height', '54px');
       } else {
         
         if (self.status == 'BIG') {
@@ -155,7 +155,7 @@ class Header extends React.Component {
         self.status = 'BIG'
         //$('.header-container').removeClass('back2top')
 
-        $('.search-container').removeClass('boldBorder')
+        //$('.search-container').removeClass('boldBorder')
 
 
         $('.chineseLogo1').attr('class', 'chineseLogo chineseLogo1');

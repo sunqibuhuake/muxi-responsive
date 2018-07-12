@@ -26,16 +26,18 @@ export default class NavBtn extends React.PureComponent {
     const {active, name, index} = this.props;
     return (
       <div
-        onMouseEnter={(evt) => {
-            $(evt.target).parents('.header-container').find('.nav-btn-' + index).addClass('hovering')
-          }}
-        onMouseLeave={(evt) => {
-             $(evt.target).parents('.header-container').find('.nav-btn-' + index).removeClass('hovering')
-          }}
-        onClick={this.handleClick.bind(this)}
         className={(active ? 'nav-btn active' : 'nav-btn') + ' nav-btn-' + index}
       >
-        <span>
+        <span
+          style={{cursor: 'pointer'}}
+            onMouseEnter={(evt) => {
+              $(evt.target).parents('.header-container').find('.nav-btn-' + index).addClass('hovering')
+            }}
+          onMouseLeave={(evt) => {
+               $(evt.target).parents('.header-container').find('.nav-btn-' + index).removeClass('hovering')
+            }}
+        onClick={this.handleClick.bind(this)}
+        >
         {name}
         </span>
       </div>

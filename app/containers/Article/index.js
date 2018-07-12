@@ -9,6 +9,7 @@ import ArticleItem from './ArticleItem'
 import './style.css'
 import sort from '../../utils/sort'
 import {Row ,Col} from 'antd'
+import helper from '../../utils/helper'
 export default class Article extends React.PureComponent {
 
   constructor(props) {
@@ -112,12 +113,20 @@ componentDidMount() {
       <section>
         {items.length> 0 ? items : (
           <Row>
-            <Col span={12}>
-            <h3 style={{paddingTop: 12,paddingLeft: 24,textAlign: 'left'}}>暂无内容</h3>
+            <Col 
+            md={12}
+            sm={helper.getResSpan('zh', this.props.lang)}
+            xs={helper.getResSpan('zh', this.props.lang)}
+            span={12}>
+            <h3 className="zh-font" style={{paddingTop: 12,paddingLeft: 24,textAlign: 'left'}}>暂无内容</h3>
             </Col>
 
-             <Col span={12}>
-            <h3 style={{paddingTop: 12,paddingLeft: 24,textAlign: 'left'}}>no content yet</h3>
+             <Col 
+             md={12}
+             sm={helper.getResSpan('en', this.props.lang)}
+             xs={helper.getResSpan('en', this.props.lang)}
+             span={12}>
+            <h3 className="en-font" style={{paddingTop: 12,paddingLeft: 24,textAlign: 'left'}}>No Content Yet</h3>
             </Col>
           </Row>
           

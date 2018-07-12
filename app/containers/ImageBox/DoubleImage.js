@@ -54,7 +54,7 @@ export default class DoubleImage extends React.PureComponent {
     }
     return (
       <Row
-      style={{padding: '4px 0 16px'}} 
+      style={{padding: 0}} 
       id={this.state.id}>
 
         {this.props.images.map(image => (

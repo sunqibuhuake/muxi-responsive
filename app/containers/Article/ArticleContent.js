@@ -49,7 +49,7 @@ export default class ArticleContent extends React.PureComponent {
       //   console.log('scroll done')
       // })
 
-      let scroll_delta = top - 120;
+      let scroll_delta = top - 148;
       console.log(scroll_delta)
       if (scroll_delta <= 140) {
         scroll_delta = 0;

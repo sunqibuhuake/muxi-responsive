@@ -33,13 +33,14 @@ export class AboutPage extends React.PureComponent {
       zh: {
         padding: '12px 24px',
         fontSize: '12pt',
-        lineHeight: '18pt'
+        lineHeight: '18pt',
+        color: 'black'
       },
       en: {
         padding: '12px 24px',
         fontSize: '12pt',
-        lineHeight: '18pt'
-
+        lineHeight: '18pt',
+        color: 'black'
       }
     }
 
